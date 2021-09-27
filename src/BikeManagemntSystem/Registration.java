@@ -37,7 +37,7 @@ public class Registration implements ActionListener {
         fon3 = new Font("Times new roman", Font.BOLD, 30);
 
         panel = new JPanel();
-        panel.setBounds(0, 0, 1000, 700);
+        panel.setBounds(0, 0, 1370, 700);
         panel.setLayout(null);
         fr.add(panel);
 
@@ -140,12 +140,12 @@ public class Registration implements ActionListener {
         btn_login.addActionListener(this);
         panel.add(btn_login);
 
-        reg_bg = new ImageIcon(getClass().getResource("bike.jpg"));
+        reg_bg = new ImageIcon(getClass().getResource("register_bg.png"));
         lbl_img = new JLabel(reg_bg);
-        lbl_img.setBounds(0, 0, 1000, 700);
+        lbl_img.setBounds(0, 0, 1370, 700);
         panel.add(lbl_img);
 
-        fr.setSize(1000,700);
+        fr.setSize(1370,700);
         fr.setVisible(true);
         fr.setBackground(Color.YELLOW);
     }

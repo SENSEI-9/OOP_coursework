@@ -16,8 +16,8 @@ public class MainPage implements ActionListener {
     JLabel lbl_heading, lbl_bike1, lbl_bike2, lbl_bike3, lbl_bike4, lbl_bike5,
             lbl_topic, lbl_firstname, lbl_lastname, lbl_contact, lbl_gender, lbl_password, lbl_confirm, lbl_img;
     Font fon1, fon2, fon3;
-    JPanel panel, bike, details, profile;
-    JButton btn_bike, btn_details, btn_profile, btn_book, btn_delete;
+    JPanel panel, bike,helmet, details, profile;
+    JButton btn_bike,btn_helmet, btn_details, btn_profile, btn_book, btn_delete;
     ImageIcon image;
     String firstname;
     JCheckBox cb1, cb2, cb3, cb4, cb5;
@@ -40,7 +40,7 @@ public class MainPage implements ActionListener {
         fon3 = new Font("arial", Font.BOLD, 18);
 
         panel = new JPanel();
-        panel.setSize(1000, 700);
+        panel.setSize(1370, 700);
         panel.setLayout(null);
         fr.add(panel);
         lbl_heading = new JLabel("BIKE LORD TANGO");
@@ -54,6 +54,11 @@ public class MainPage implements ActionListener {
         bike.setBounds(40, 200, 900, 450);
         bike.setLayout(null);
         panel.add(bike);
+
+        helmet = new JPanel();
+        helmet.setBackground(Color.black);
+        helmet.setLayout(null);
+        panel.add(helmet);
 
         details = new JPanel();
         details.setBackground(Color.black);
@@ -75,9 +80,16 @@ public class MainPage implements ActionListener {
         btn_bike.setBackground(Color.black);
         panel.add(btn_bike);
 
+        btn_helmet = new JButton("Bike");
+        btn_helmet.setBounds(400, 120, 200, 50);
+        btn_helmet.setFont(fon2);
+        btn_helmet.setForeground(Color.green);
+        btn_helmet.addActionListener(this);
+        btn_helmet.setBackground(Color.black);
+        panel.add(btn_helmet);
 
         btn_profile = new JButton("Profile");
-        btn_profile.setBounds(620, 120, 200, 50);
+        btn_profile.setBounds(840, 120, 200, 50);
         btn_profile.setFont(fon2);
         btn_profile.setForeground(Color.white);
         btn_profile.setBackground(Color.black);
@@ -116,6 +128,7 @@ public class MainPage implements ActionListener {
         lbl_bike5 = new JLabel(bike5);
         lbl_bike5.setBounds(630, 230, 270, 170);
         bike.add(lbl_bike5);
+
 
 
         cb1 = new JCheckBox("180s");
