@@ -14,16 +14,17 @@ import javax.swing.table.JTableHeader;
 public class MainPage implements ActionListener {
     JFrame fr;
     JLabel lbl_heading, lbl_bike1, lbl_bike2, lbl_bike3, lbl_bike4, lbl_bike5,
-            lbl_topic, lbl_firstname, lbl_lastname, lbl_contact, lbl_gender, lbl_password, lbl_confirm, lbl_img;
+            lbl_topic, lbl_firstname, lbl_lastname, lbl_contact, lbl_gender,
+            lbl_password, lbl_confirm,lbl_helmet1,lbl_helmet2,lbl_helmet3,lbl_helmet4,lbl_helmet5, lbl_img;
     Font fon1, fon2, fon3;
     JPanel panel, bike,helmet, details, profile;
-    JButton btn_bike,btn_helmet, btn_details, btn_profile, btn_book, btn_delete;
+    JButton btn_bike,btn_helmet, btn_details, btn_profile, btn_book, btn_book1,btn_delete;
     ImageIcon image;
     String firstname;
-    JCheckBox cb1, cb2, cb3, cb4, cb5;
-    ImageIcon bike1, bike2, bike3, bike4, bike5;
-    String bike_name;
-    ButtonGroup bg;
+    JCheckBox cb1, cb2, cb3, cb4, cb5,cb6,cb7,cb8,cb9,cb10;
+    ImageIcon bike1, bike2, bike3, bike4, bike5,helmet1,helmet2,helmet3,helmet4,helmet5;
+    String bike_name,helmet_name;
+    ButtonGroup bg,bg1;
     JTable jt;
     DefaultTableModel model;
     JScrollPane pg;
@@ -129,7 +130,30 @@ public class MainPage implements ActionListener {
         lbl_bike5.setBounds(630, 230, 270, 170);
         bike.add(lbl_bike5);
 
+        helmet1 = new ImageIcon(getClass().getResource("avg.png"));
+        lbl_helmet1 = new JLabel(helmet1);
+        lbl_helmet1.setBounds(0, 0, 508, 600);
+        bike.add(lbl_helmet1);
 
+        helmet2 = new ImageIcon(getClass().getResource("bilmola.png"));
+        lbl_helmet2 = new JLabel(helmet2);
+        lbl_helmet2.setBounds(0, 0, 503, 600);
+        bike.add(lbl_helmet2);
+
+        helmet3 = new ImageIcon(getClass().getResource("ls2.png"));
+        lbl_helmet3 = new JLabel(helmet3);
+        lbl_helmet3.setBounds(0, 0, 511, 600);
+        bike.add(lbl_helmet3);
+
+        helmet4 = new ImageIcon(getClass().getResource("shark.png"));
+        lbl_helmet4 = new JLabel(helmet4);
+        lbl_helmet4.setBounds(0, 0, 508, 600);
+        bike.add(lbl_helmet4);
+
+        helmet5 = new ImageIcon(getClass().getResource("studds.png"));
+        lbl_helmet5 = new JLabel(helmet5);
+        lbl_helmet5.setBounds(0, 0, 509, 600);
+        bike.add(lbl_helmet5);
 
         cb1 = new JCheckBox("180s");
         cb1.setBounds(100, 180, 100, 40);
@@ -156,12 +180,41 @@ public class MainPage implements ActionListener {
         cb5.setForeground(Color.white);
         cb5.setBackground(Color.black);
 
+        cb6 = new JCheckBox("AGV(ROSS)");
+        cb6.setBounds(400, 450, 150, 50);
+        cb6.setForeground(Color.white);
+        cb6.setBackground(Color.black);
+
+        cb7 = new JCheckBox("BILMOLA");
+        cb7.setBounds(1200, 450, 150, 50);
+        cb7.setForeground(Color.white);
+        cb7.setBackground(Color.black);
+
+        cb8 = new JCheckBox("LS2");
+        cb8.setBounds(800, 550, 150, 50);
+        cb8.setForeground(Color.white);
+        cb8.setBackground(Color.black);
+
+        cb9 = new JCheckBox("SHARK");
+        cb9.setBounds(400, 730, 150, 50);
+        cb9.setForeground(Color.white);
+        cb9.setBackground(Color.black);
+
+        cb10 = new JCheckBox("STUDDS");
+        cb10.setBounds(1200, 730, 150, 50);
+        cb10.setForeground(Color.white);
+        cb10.setBackground(Color.black);
 
         cb1.setFont(fon3);
         cb2.setFont(fon3);
         cb3.setFont(fon3);
         cb4.setFont(fon3);
         cb5.setFont(fon3);
+        cb6.setFont(fon3);
+        cb7.setFont(fon3);
+        cb8.setFont(fon3);
+        cb9.setFont(fon3);
+        cb10.setFont(fon3);
 
         ButtonGroup bg = new ButtonGroup();
         bg.add(cb1);
@@ -169,6 +222,12 @@ public class MainPage implements ActionListener {
         bg.add(cb3);
         bg.add(cb4);
         bg.add(cb5);
+        ButtonGroup bg1 = new ButtonGroup();
+        bg.add(cb6);
+        bg.add(cb7);
+        bg.add(cb8);
+        bg.add(cb9);
+        bg.add(cb10);
 
 
         bike.add(cb1);
@@ -176,6 +235,12 @@ public class MainPage implements ActionListener {
         bike.add(cb3);
         bike.add(cb4);
         bike.add(cb5);
+
+        helmet.add(cb6);
+        helmet.add(cb7);
+        helmet.add(cb8);
+        helmet.add(cb9);
+        helmet.add(cb10);
 
         btn_book = new JButton("BOOK");
         btn_book.setBounds(350, 390, 200, 50);
@@ -185,8 +250,23 @@ public class MainPage implements ActionListener {
         btn_book.addActionListener(this);
         bike.add(btn_book);
 
+        btn_book = new JButton("BOOK BIKE");
+        btn_book.setBounds(350, 390, 200, 50);
+        btn_book.setFont(fon2);
+        btn_book.setForeground(Color.white);
+        btn_book.setBackground(Color.black);
+        btn_book.addActionListener(this);
+        bike.add(btn_book);
 
-        fr.setSize(1000, 700);
+        btn_book1 = new JButton("BOOK HELMET");
+        btn_book1.setBounds(350, 390, 200, 50);
+        btn_book1.setFont(fon2);
+        btn_book1.setForeground(Color.white);
+        btn_book1.setBackground(Color.black);
+        btn_book1.addActionListener(this);
+        helmet.add(btn_book1);
+
+        fr.setSize(1480, 700);
         fr.setVisible(true);
     }
 
@@ -215,7 +295,8 @@ public class MainPage implements ActionListener {
         details.add(btn_delete);
         model.addColumn("Id");
         model.addColumn("User Name");
-        model.addColumn("Bike Name");
+        model.addColumn("Bike");
+        model.addColumn("Helmet");
 
         JTableHeader header = jt.getTableHeader();
         header.setFont(fon2);
@@ -224,12 +305,12 @@ public class MainPage implements ActionListener {
         jt.getTableHeader().setPreferredSize(new Dimension(80, 50));
         try {
             Operations db = new Operations();
-            String query = "select * from bike where username='" + firstname + "'";
+            String query = "select * from bike1 where username='" + firstname + "'";
             ResultSet rs = db.select(query);
 
 
             while (rs.next()) {
-                model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(3)});
+                model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(3),rs.getString(4)});
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -389,15 +470,33 @@ public class MainPage implements ActionListener {
 
 
         if (e.getSource() == btn_bike) {
+            helmet.setBounds(0, 0, 0, 0);
             profile.setBounds(0, 0, 0, 0);
             details.setBounds(0, 0, 0, 0);
+            btn_helmet.setForeground(Color.white);
+            btn_helmet.setBackground(Color.black);
             btn_bike.setForeground(Color.green);
             btn_bike.setBackground(Color.black);
             btn_details.setForeground(Color.white);
             btn_details.setBackground(Color.black);
             btn_profile.setForeground(Color.white);
             btn_profile.setBackground(Color.black);
+
             bike.setBounds(40, 200, 900, 450);
+        } else if (e.getSource() == btn_helmet) {
+            bike.setBounds(0, 0, 0, 0);
+            profile.setBounds(0, 0, 0, 0);
+            details.setBounds(0, 0, 0, 0);
+            btn_helmet.setForeground(Color.green);
+            btn_helmet.setBackground(Color.black);
+            btn_bike.setForeground(Color.white);
+            btn_bike.setBackground(Color.black);
+            btn_profile.setForeground(Color.white);
+            btn_profile.setBackground(Color.black);
+            btn_details.setForeground(Color.white);
+            btn_details.setBackground(Color.black);
+            helmet.setBounds(40, 200, 900, 450);
+
         } else if (e.getSource() == btn_details) {
             bike.setBounds(0, 0, 0, 0);
             profile.setBounds(0, 0, 0, 0);
@@ -420,6 +519,41 @@ public class MainPage implements ActionListener {
             btn_details.setForeground(Color.white);
             btn_details.setBackground(Color.black);
             profile();
+
+        } else if (e.getSource() == btn_book1) {
+            if (cb6.isSelected() == false && cb7.isSelected() == false && cb8.isSelected() == false && cb9.isSelected() == false
+                    && cb10.isSelected() == false) {
+                JOptionPane.showMessageDialog(btn_book, "Please choose helmet");
+                return;
+            } else {
+                if (cb6.isSelected() == true) {
+                    bike_name = "AGV(ROSS)";
+                }
+                if (cb7.isSelected() == true) {
+                    bike_name = "BILMOLA";
+                }
+                if (cb8.isSelected() == true) {
+                    bike_name = "LS2";
+                }
+                if (cb9.isSelected() == true) {
+                    bike_name = "SHARK";
+                }
+                if (cb10.isSelected() == true) {
+                    bike_name = "STUDDS";
+                }
+                Operations db = new Operations();
+                String query = "insert into bike(username,helmetname)"
+                        + " values('" + firstname + "','" + helmet_name + "')";
+                int ans = db.insert(query);
+                if (ans > 0) {
+                    JOptionPane.showMessageDialog(fr, "Helmet booked successfully");
+                    cb6.setSelected(false);
+                    cb7.setSelected(false);
+                    cb8.setSelected(false);
+                    cb9.setSelected(false);
+                    cb10.setSelected(false);
+                }
+            }
 
         } else if (e.getSource() == btn_book) {
             if (cb1.isSelected() == false && cb2.isSelected() == false && cb3.isSelected() == false && cb4.isSelected() == false
@@ -457,11 +591,14 @@ public class MainPage implements ActionListener {
             }
         }
 
+
+
+
         if (e.getSource() == btn_delete) {
             if (e.getSource() == btn_delete) {
                 try {
                     Operations db = new Operations();
-                    String sql = "DELETE FROM bike WHERE id='" + txt_id.getText() + "'";
+                    String sql = "DELETE FROM bike1 WHERE id='" + txt_id.getText() + "'";
                     int rowsDeleted = db.executeDelete(sql);
                     model = (DefaultTableModel) jt.getModel();
                     if (rowsDeleted > 0) {
