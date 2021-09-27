@@ -43,25 +43,25 @@ public class Registration implements ActionListener {
 
         lbl_topic= new JLabel("USER REGISTRATION");
         lbl_topic.setFont(fon1);
-        lbl_topic.setBounds(150, 10, 550, 50);
-        lbl_topic.setForeground(new Color(11, 75, 11));
+        lbl_topic.setBounds(180, 10, 550, 50);
+        lbl_topic.setForeground(new Color(255, 255, 255));
         panel.add(lbl_topic);
 
 
         lbl_firstname = new JLabel("First name:");
         lbl_firstname.setFont(fon2);
-        lbl_firstname.setBounds(20, 80, 300, 50);
+        lbl_firstname.setBounds(20, 75, 300, 50);
         panel.add(lbl_firstname);
 
         txt_firstname = new JTextField();
         txt_firstname.setFont(fon2);
-        txt_firstname.setBackground(new Color(245, 254, 255));
+        txt_firstname.setBackground(new Color(255, 255, 255));
         txt_firstname.setBounds(130, 85, 170, 35);
         panel.add(txt_firstname);
 
         lbl_lastname = new JLabel("Last name              :");
         lbl_lastname.setFont(fon2);
-        lbl_lastname.setBounds(310, 80, 300, 50);
+        lbl_lastname.setBounds(310, 75, 300, 50);
         panel.add(lbl_lastname);
 
         txt_lastname = new JTextField();
@@ -72,12 +72,12 @@ public class Registration implements ActionListener {
 
         lbl_contact = new JLabel("Contact      :");
         lbl_contact.setFont(fon2);
-        lbl_contact.setBounds(20, 140, 300, 50);
+        lbl_contact.setBounds(20, 190, 300, 50);
         panel.add(lbl_contact);
 
         txt_contact = new JTextField();
         txt_contact.setFont(fon2);
-        txt_contact.setBounds(130, 145, 170, 35);
+        txt_contact.setBounds(130, 200, 170, 35);
         txt_contact.setBackground(new Color(245, 254, 255));
         panel.add(txt_contact);
 

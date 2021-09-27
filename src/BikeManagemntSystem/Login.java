@@ -30,6 +30,8 @@ public class Login implements ActionListener{
         fon1=new Font("Times new roman",Font.BOLD,50);
         fon2=new Font("Times new roman",Font.PLAIN,30);
 
+
+
         panel= new JPanel();
         panel.setBounds(0,0,1000,700);
         panel.setLayout(null);
