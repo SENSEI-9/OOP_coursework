@@ -67,6 +67,7 @@ public class MainPage implements ActionListener {
         panel.add(profile);
 
 
+
         btn_bike = new JButton("Bike");
         btn_bike.setBounds(600, 10, 200, 50);
         btn_bike.setFont(fon2);
