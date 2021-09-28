@@ -40,7 +40,7 @@ public class MainPage implements ActionListener {
         fon3 = new Font("arial", Font.BOLD, 18);
 
         panel = new JPanel();
-        panel.setSize(1370, 700);
+        panel.setSize(1000, 700);
         panel.setLayout(null);
         fr.add(panel);
         lbl_heading = new JLabel("BIKE LORD TANGO");
@@ -51,7 +51,7 @@ public class MainPage implements ActionListener {
 
         bike = new JPanel();
         bike.setBackground(Color.black);
-        bike.setBounds(40, 200, 1370, 700);
+        bike.setBounds(250, 200, 1100, 500);
         bike.setLayout(null);
         panel.add(bike);
 
@@ -68,7 +68,7 @@ public class MainPage implements ActionListener {
 
 
         btn_bike = new JButton("Bike");
-        btn_bike.setBounds(180, 120, 200, 50);
+        btn_bike.setBounds(40, 120, 200, 50);
         btn_bike.setFont(fon2);
         btn_bike.setForeground(Color.green);
         btn_bike.addActionListener(this);
@@ -173,7 +173,7 @@ public class MainPage implements ActionListener {
         bike.add(btn_book);
 
 
-        fr.setSize(1000, 700);
+        fr.setExtendedState(JFrame.MAXIMIZED_BOTH);
         fr.setVisible(true);
     }
 
@@ -384,7 +384,7 @@ public class MainPage implements ActionListener {
             btn_details.setBackground(Color.black);
             btn_profile.setForeground(Color.white);
             btn_profile.setBackground(Color.black);
-            bike.setBounds(40, 200, 900, 450);
+            bike.setBounds(250, 200, 1100, 500);
         } else if (e.getSource() == btn_details) {
             bike.setBounds(0, 0, 0, 0);
             profile.setBounds(0, 0, 0, 0);
@@ -394,12 +394,12 @@ public class MainPage implements ActionListener {
             btn_bike.setBackground(Color.black);
             btn_profile.setForeground(Color.white);
             btn_profile.setBackground(Color.black);
-            details.setBounds(40, 200, 900, 450);
+            details.setBounds(250, 200, 900, 450);
             details1();
         } else if (e.getSource() == btn_profile) {
             bike.setBounds(0, 0, 0, 0);
             details.setBounds(0, 0, 0, 0);
-            profile.setBounds(40, 200, 900, 450);
+            profile.setBounds(250, 200, 900, 450);
             btn_profile.setForeground(Color.green);
             btn_profile.setBackground(Color.black);
             btn_bike.setForeground(Color.white);

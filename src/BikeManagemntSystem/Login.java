@@ -86,7 +86,7 @@ public class Login implements ActionListener{
         lbl_img.setBounds(0, 0, 1000, 700);
         panel.add(lbl_img);
 
-        fr.setSize(1000,700);
+        fr.setExtendedState(JFrame.MAXIMIZED_BOTH);
         fr.setLayout(null);
         fr.setVisible(true);
     }
