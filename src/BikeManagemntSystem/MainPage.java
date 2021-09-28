@@ -94,7 +94,7 @@ public class MainPage implements ActionListener {
 
         bike1 = new ImageIcon(getClass().getResource("180s.png"));
         lbl_bike1 = new JLabel(bike1);
-        lbl_bike1.setBounds(0, 0, 270, 170);
+        lbl_bike1.setBounds(0, 0, 300, 270);
         bike.add(lbl_bike1);
 
         bike2 = new ImageIcon(getClass().getResource("302s.png"));
