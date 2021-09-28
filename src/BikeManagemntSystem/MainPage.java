@@ -43,15 +43,15 @@ public class MainPage implements ActionListener {
         panel.setSize(1000, 700);
         panel.setLayout(null);
         fr.add(panel);
-        lbl_heading = new JLabel("BIKE LORD TANGO");
+        lbl_heading = new JLabel("BENELLI SHOWROOM");
         lbl_heading.setFont(fon1);
-        lbl_heading.setBounds(800, 20, 550, 50);
+        lbl_heading.setBounds(0, 20, 750, 50);
         lbl_heading.setForeground(new Color(23, 157, 0));
         panel.add(lbl_heading);
 
         bike = new JPanel();
         bike.setBackground(Color.black);
-        bike.setBounds(0, 80, 1500, 630);
+        bike.setBounds(0, 60, 1500, 650);
         bike.setLayout(null);
         panel.add(bike);
 
@@ -68,7 +68,7 @@ public class MainPage implements ActionListener {
 
 
         btn_bike = new JButton("Bike");
-        btn_bike.setBounds(40, 70, 200, 50);
+        btn_bike.setBounds(600, 10, 200, 50);
         btn_bike.setFont(fon2);
         btn_bike.setForeground(Color.green);
         btn_bike.addActionListener(this);
@@ -77,7 +77,7 @@ public class MainPage implements ActionListener {
 
 
         btn_profile = new JButton("Profile");
-        btn_profile.setBounds(620, 70, 200, 50);
+        btn_profile.setBounds(1000, 10, 200, 50);
         btn_profile.setFont(fon2);
         btn_profile.setForeground(Color.white);
         btn_profile.setBackground(Color.black);
@@ -85,7 +85,7 @@ public class MainPage implements ActionListener {
         panel.add(btn_profile);
 
         btn_details = new JButton("Details");
-        btn_details.setBounds(400, 70, 200, 50);
+        btn_details.setBounds(800, 10, 200, 50);
         btn_details.setFont(fon2);
         btn_details.setForeground(Color.white);
         btn_details.setBackground(Color.black);
@@ -149,7 +149,7 @@ public class MainPage implements ActionListener {
         cb3.setBackground(Color.black);
 
         cb4 = new JCheckBox("Leoncino 250");
-        cb4.setBounds(390, 580, 150, 30);
+        cb4.setBounds(370, 580, 150, 30);
         cb4.setForeground(Color.white);
         cb4.setBackground(Color.black);
 
@@ -203,7 +203,7 @@ public class MainPage implements ActionListener {
         bike.add(cb8);
 
         btn_book = new JButton("BOOK");
-        btn_book.setBounds(350, 390, 200, 50);
+        btn_book.setBounds(530, 590, 200, 50);
         btn_book.setFont(fon2);
         btn_book.setForeground(Color.white);
         btn_book.setBackground(Color.black);
