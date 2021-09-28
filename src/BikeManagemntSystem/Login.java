@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -29,8 +30,6 @@ public class Login implements ActionListener{
         fr=new JFrame("Login Page");
         fon1=new Font("Times new roman",Font.BOLD,50);
         fon2=new Font("Times new roman",Font.PLAIN,30);
-
-
 
         panel= new JPanel();
         panel.setBounds(0,0,1000,700);
