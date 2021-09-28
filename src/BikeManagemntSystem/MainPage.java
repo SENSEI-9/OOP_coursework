@@ -117,31 +117,61 @@ public class MainPage implements ActionListener {
         lbl_bike5.setBounds(670, 0, 300, 270);
         bike.add(lbl_bike5);
 
+        bike6 = new ImageIcon(getClass().getResource("trk251.png"));
+        lbl_bike6 = new JLabel(bike6);
+        lbl_bike6.setBounds(670, 310, 300, 270);
+        bike.add(lbl_bike6);
+
+        bike7 = new ImageIcon(getClass().getResource("150i.png"));
+        lbl_bike7 = new JLabel(bike7);
+        lbl_bike7.setBounds(1030, 0, 300, 270);
+        bike.add(lbl_bike7);
+
+        bike8 = new ImageIcon(getClass().getResource("tnt135.png"));
+        lbl_bike8 = new JLabel(bike8);
+        lbl_bike8.setBounds(1030, 310, 300, 270);
+        bike.add(lbl_bike8);
+
 
         cb1 = new JCheckBox("Benelli 180s");
-        cb1.setBounds(60, 270, 240, 30);
+        cb1.setBounds(60, 270, 200, 30);
         cb1.setForeground(Color.white);
         cb1.setBackground(Color.black);
 
         cb2 = new JCheckBox("Benelli Tnt 302s");
-        cb2.setBounds(60, 580, 290, 30);
+        cb2.setBounds(60, 580, 260, 30);
         cb2.setForeground(Color.white);
         cb2.setBackground(Color.black);
 
         cb3 = new JCheckBox("Benelli 752s");
-        cb3.setBounds(390, 270, 240, 30);
+        cb3.setBounds(390, 270, 200, 30);
         cb3.setForeground(Color.white);
         cb3.setBackground(Color.black);
 
         cb4 = new JCheckBox("Leoncino 250");
-        cb4.setBounds(390, 580, 150, 50);
+        cb4.setBounds(390, 580, 150, 30);
         cb4.setForeground(Color.white);
         cb4.setBackground(Color.black);
 
         cb5 = new JCheckBox("Benelli Tnt15");
-        cb5.setBounds(730, 270, 150, 50);
+        cb5.setBounds(730, 270, 150, 30);
         cb5.setForeground(Color.white);
         cb5.setBackground(Color.black);
+
+        cb6 = new JCheckBox("Benelli TRK 251");
+        cb6.setBounds(730, 580, 180, 30);
+        cb6.setForeground(Color.white);
+        cb6.setBackground(Color.black);
+
+        cb7 = new JCheckBox("Benelli Tnt 150i");
+        cb7.setBounds(1100, 270, 180, 30);
+        cb7.setForeground(Color.white);
+        cb7.setBackground(Color.black);
+
+        cb8 = new JCheckBox("Benelli Tnt 135");
+        cb8.setBounds(1100, 580, 180, 30);
+        cb8.setForeground(Color.white);
+        cb8.setBackground(Color.black);
 
 
         cb1.setFont(fon3);
@@ -149,6 +179,9 @@ public class MainPage implements ActionListener {
         cb3.setFont(fon3);
         cb4.setFont(fon3);
         cb5.setFont(fon3);
+        cb6.setFont(fon3);
+        cb7.setFont(fon3);
+        cb8.setFont(fon3);
 
         ButtonGroup bg = new ButtonGroup();
         bg.add(cb1);
@@ -156,13 +189,18 @@ public class MainPage implements ActionListener {
         bg.add(cb3);
         bg.add(cb4);
         bg.add(cb5);
-
+        bg.add(cb6);
+        bg.add(cb7);
+        bg.add(cb8);
 
         bike.add(cb1);
         bike.add(cb2);
         bike.add(cb3);
         bike.add(cb4);
         bike.add(cb5);
+        bike.add(cb6);
+        bike.add(cb7);
+        bike.add(cb8);
 
         btn_book = new JButton("BOOK");
         btn_book.setBounds(350, 390, 200, 50);
@@ -410,7 +448,7 @@ public class MainPage implements ActionListener {
 
         } else if (e.getSource() == btn_book) {
             if (cb1.isSelected() == false && cb2.isSelected() == false && cb3.isSelected() == false && cb4.isSelected() == false
-                    && cb5.isSelected() == false) {
+                    && cb5.isSelected() == false && cb6.isSelected() == false && cb7.isSelected() == false && cb8.isSelected() == false) {
                 JOptionPane.showMessageDialog(btn_book, "Please choose bike");
                 return;
             } else {
@@ -429,6 +467,15 @@ public class MainPage implements ActionListener {
                 if (cb5.isSelected() == true) {
                     bike_name = "Benelli Tnt15";
                 }
+                if (cb6.isSelected() == true) {
+                    bike_name = "Benelli TRK 251";
+                }
+                if (cb7.isSelected() == true) {
+                    bike_name = "Benelli Tnt 150i";
+                }
+                if (cb8.isSelected() == true) {
+                    bike_name = "Benelli Tnt 135";
+                }
                 Operations db = new Operations();
                 String query = "insert into bike(username,bikename)"
                         + " values('" + firstname + "','" + bike_name + "')";
@@ -440,6 +487,9 @@ public class MainPage implements ActionListener {
                     cb3.setSelected(false);
                     cb4.setSelected(false);
                     cb5.setSelected(false);
+                    cb6.setSelected(false);
+                    cb7.setSelected(false);
+                    cb8.setSelected(false);
                 }
             }
         }
