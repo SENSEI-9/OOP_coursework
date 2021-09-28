@@ -13,15 +13,15 @@ import javax.swing.table.JTableHeader;
 
 public class MainPage implements ActionListener {
     JFrame fr;
-    JLabel lbl_heading, lbl_bike1, lbl_bike2, lbl_bike3, lbl_bike4, lbl_bike5,
+    JLabel lbl_heading, lbl_bike1, lbl_bike2, lbl_bike3, lbl_bike4, lbl_bike5,lbl_bike6,lbl_bike7,lbl_bike8,
             lbl_topic, lbl_firstname, lbl_lastname, lbl_contact, lbl_gender, lbl_password, lbl_confirm, lbl_img;
     Font fon1, fon2, fon3;
     JPanel panel, bike, details, profile;
     JButton btn_bike, btn_details, btn_profile, btn_book, btn_delete;
     ImageIcon image;
     String firstname;
-    JCheckBox cb1, cb2, cb3, cb4, cb5;
-    ImageIcon bike1, bike2, bike3, bike4, bike5;
+    JCheckBox cb1, cb2, cb3, cb4, cb5,cb6,cb7,cb8;
+    ImageIcon bike1, bike2, bike3, bike4, bike5,bike6,bike7,bike8;
     String bike_name;
     ButtonGroup bg;
     JTable jt;
@@ -45,13 +45,13 @@ public class MainPage implements ActionListener {
         fr.add(panel);
         lbl_heading = new JLabel("BIKE LORD TANGO");
         lbl_heading.setFont(fon1);
-        lbl_heading.setBounds(250, 20, 550, 50);
+        lbl_heading.setBounds(800, 20, 550, 50);
         lbl_heading.setForeground(new Color(23, 157, 0));
         panel.add(lbl_heading);
 
         bike = new JPanel();
         bike.setBackground(Color.black);
-        bike.setBounds(250, 200, 1100, 500);
+        bike.setBounds(0, 80, 1500, 630);
         bike.setLayout(null);
         panel.add(bike);
 
@@ -68,7 +68,7 @@ public class MainPage implements ActionListener {
 
 
         btn_bike = new JButton("Bike");
-        btn_bike.setBounds(40, 120, 200, 50);
+        btn_bike.setBounds(40, 70, 200, 50);
         btn_bike.setFont(fon2);
         btn_bike.setForeground(Color.green);
         btn_bike.addActionListener(this);
@@ -77,7 +77,7 @@ public class MainPage implements ActionListener {
 
 
         btn_profile = new JButton("Profile");
-        btn_profile.setBounds(620, 120, 200, 50);
+        btn_profile.setBounds(620, 70, 200, 50);
         btn_profile.setFont(fon2);
         btn_profile.setForeground(Color.white);
         btn_profile.setBackground(Color.black);
@@ -85,7 +85,7 @@ public class MainPage implements ActionListener {
         panel.add(btn_profile);
 
         btn_details = new JButton("Details");
-        btn_details.setBounds(400, 120, 200, 50);
+        btn_details.setBounds(400, 70, 200, 50);
         btn_details.setFont(fon2);
         btn_details.setForeground(Color.white);
         btn_details.setBackground(Color.black);
@@ -99,47 +99,47 @@ public class MainPage implements ActionListener {
 
         bike2 = new ImageIcon(getClass().getResource("302s.png"));
         lbl_bike2 = new JLabel(bike2);
-        lbl_bike2.setBounds(0, 230, 270, 170);
+        lbl_bike2.setBounds(0, 310, 300, 270);
         bike.add(lbl_bike2);
 
         bike3 = new ImageIcon(getClass().getResource("752s.png"));
         lbl_bike3 = new JLabel(bike3);
-        lbl_bike3.setBounds(280, 50, 350, 225);
+        lbl_bike3.setBounds(330, 0, 300, 270);
         bike.add(lbl_bike3);
 
         bike4 = new ImageIcon(getClass().getResource("leoncino250.png"));
         lbl_bike4 = new JLabel(bike4);
-        lbl_bike4.setBounds(630, 0, 270, 170);
+        lbl_bike4.setBounds(330, 310, 300, 270);
         bike.add(lbl_bike4);
 
         bike5 = new ImageIcon(getClass().getResource("tnt15.png"));
         lbl_bike5 = new JLabel(bike5);
-        lbl_bike5.setBounds(630, 230, 270, 170);
+        lbl_bike5.setBounds(670, 0, 300, 270);
         bike.add(lbl_bike5);
 
 
-        cb1 = new JCheckBox("180s");
-        cb1.setBounds(100, 180, 100, 40);
+        cb1 = new JCheckBox("Benelli 180s");
+        cb1.setBounds(60, 270, 240, 30);
         cb1.setForeground(Color.white);
         cb1.setBackground(Color.black);
 
-        cb2 = new JCheckBox("302s");
-        cb2.setBounds(100, 400, 100, 50);
+        cb2 = new JCheckBox("Benelli Tnt 302s");
+        cb2.setBounds(60, 580, 290, 30);
         cb2.setForeground(Color.white);
         cb2.setBackground(Color.black);
 
-        cb3 = new JCheckBox("752s");
-        cb3.setBounds(430, 300, 100, 50);
+        cb3 = new JCheckBox("Benelli 752s");
+        cb3.setBounds(390, 270, 240, 30);
         cb3.setForeground(Color.white);
         cb3.setBackground(Color.black);
 
-        cb4 = new JCheckBox("Leoncino250");
-        cb4.setBounds(710, 180, 150, 50);
+        cb4 = new JCheckBox("Leoncino 250");
+        cb4.setBounds(390, 580, 150, 50);
         cb4.setForeground(Color.white);
         cb4.setBackground(Color.black);
 
-        cb5 = new JCheckBox("tnt15");
-        cb5.setBounds(730, 400, 100, 50);
+        cb5 = new JCheckBox("Benelli Tnt15");
+        cb5.setBounds(730, 270, 150, 50);
         cb5.setForeground(Color.white);
         cb5.setBackground(Color.black);
 
@@ -384,7 +384,7 @@ public class MainPage implements ActionListener {
             btn_details.setBackground(Color.black);
             btn_profile.setForeground(Color.white);
             btn_profile.setBackground(Color.black);
-            bike.setBounds(250, 200, 1100, 500);
+            bike.setBounds(0, 80, 1500, 630);
         } else if (e.getSource() == btn_details) {
             bike.setBounds(0, 0, 0, 0);
             profile.setBounds(0, 0, 0, 0);
@@ -415,19 +415,19 @@ public class MainPage implements ActionListener {
                 return;
             } else {
                 if (cb1.isSelected() == true) {
-                    bike_name = "180s";
+                    bike_name = "Benelli 180s";
                 }
                 if (cb2.isSelected() == true) {
-                    bike_name = "302s";
+                    bike_name = "Benelli Tnt 302s";
                 }
                 if (cb3.isSelected() == true) {
-                    bike_name = "752s";
+                    bike_name = "Benelli 752s";
                 }
                 if (cb4.isSelected() == true) {
-                    bike_name = "leoncino250";
+                    bike_name = "leoncino 250";
                 }
                 if (cb5.isSelected() == true) {
-                    bike_name = "tnt15";
+                    bike_name = "Benelli Tnt15";
                 }
                 Operations db = new Operations();
                 String query = "insert into bike(username,bikename)"
