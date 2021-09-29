@@ -5,8 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Objects;
-
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -17,73 +15,87 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
-public class Login implements ActionListener{
+public class Login implements ActionListener {
     JFrame fr;
-    JLabel lbl_heading,lbl_username,lbl_password,lbl_img;
-    JTextField txt_firstname;
+    JLabel lbl_heading,lbl_username,lbl_password,lbl_img,lbl_info;
+    JTextField txt_username;
     JPasswordField txt_password;
     JButton btn_login,btn_reg;
-    Font fon1,fon2;
+    Font fon1,fon2,fon3;
     JPanel panel;
     ImageIcon image_bg;
     public Login(){
         fr=new JFrame("Login Page");
-        fon1=new Font("Times new roman",Font.BOLD,50);
-        fon2=new Font("Times new roman",Font.PLAIN,30);
+        fon1=new Font("algerian",Font.BOLD,50);
+        fon2=new Font("areal",Font.BOLD,20);
+        fon3=new Font("areal",Font.BOLD,30);
 
         panel= new JPanel();
-        panel.setBounds(0,0,1000,700);
+        panel.setBounds(0,0,1370,750);
         panel.setLayout(null);
         fr.add(panel);
 
+
         lbl_heading=new JLabel("LOGIN HERE");
         lbl_heading.setFont(fon1);
-        lbl_heading.setBounds(140,60,350,50);
-        lbl_heading.setForeground(new Color(219, 255, 0));
+        lbl_heading.setBounds(500,150,350,50);
+        lbl_heading.setForeground(new Color(7,95,108));
         panel.add(lbl_heading);
 
         lbl_username=new JLabel("User name :");
+        lbl_username.setForeground(new Color(3,57,46));
         lbl_username.setFont(fon2);
-        lbl_username.setBounds(120,120,150,40);
+        lbl_username.setBounds(450,195,150,40);
         panel.add(lbl_username);
 
-        txt_firstname=new JTextField();
-        txt_firstname.setFont(fon2);
-        txt_firstname.setBackground(Color.white);
-        txt_firstname.setBounds(280,125,200,40);
-        panel.add(txt_firstname);
+        txt_username=new JTextField();
+        txt_username.setFont(fon2);
+        txt_username.setBackground(new Color(220,239,238));
+        txt_username.setBounds(570,198,230,40);
+        panel.add(txt_username);
 
         lbl_password=new JLabel("Password  :");
+        lbl_password.setForeground(new Color(3,57,46));
         lbl_password.setFont(fon2);
-        lbl_password.setBounds(120,180,150,40);
+        lbl_password.setBounds(450,240,150,40);
         panel.add(lbl_password);
 
         txt_password=new JPasswordField();
         txt_password.setFont(fon2);
-        txt_password.setBackground(Color.white);
-        txt_password.setBounds(280,185,200,40);
+        txt_password.setBackground(new Color(220,239,238));
+        txt_password.setBounds(570,243,230,40);
+        txt_password.setBackground(new Color(220,239,238));
         panel.add(txt_password);
 
         btn_login=new JButton("LOGIN");
-        btn_login.setFont(fon2);
-        btn_login.setForeground(Color.white);
-        btn_login.setBackground(Color.blue);
+        btn_login.setFont(fon3);
+        btn_login.setBackground(new Color(11,135,15));
+        btn_login.setBorder(new LineBorder(Color.green,4));
+        btn_login.setForeground(new Color(236,224,249));
+        btn_login.setBounds(580,290,150,50);
         btn_login.addActionListener(this);
-        btn_login.setBounds(250,250,150,60);
-
         panel.add(btn_login);
 
-        btn_reg=new JButton("Register Here");
+        btn_reg=new JButton("Sign up");
         btn_reg.setForeground(Color.white);
-        btn_reg.setBackground(Color.blue);
+        btn_reg.setBackground(new Color(253,48,48));
+        btn_reg.setBorder(new LineBorder(new Color(243,143,177),4));
         btn_reg.setFont(fon2);
-        btn_reg.setBounds(210,330,220,40);
+        btn_reg.setBounds(680,350,150,40);
         btn_reg.addActionListener(this);
         panel.add(btn_reg);
 
-        image_bg=new ImageIcon(Objects.requireNonNull(getClass().getResource("bike.jpg")));
+
+
+        lbl_password=new JLabel("Register now:");
+        lbl_password.setForeground(new Color(3,57,46));
+        lbl_password.setFont(fon2);
+        lbl_password.setBounds(450,350,450,40);
+        panel.add(lbl_password);
+
+        image_bg=new ImageIcon(getClass().getResource("login.png"));
         lbl_img=new JLabel(image_bg);
-        lbl_img.setBounds(0, 0, 1000, 700);
+        lbl_img.setBounds(0,0,1370,700);
         panel.add(lbl_img);
 
         fr.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -93,7 +105,6 @@ public class Login implements ActionListener{
     public static void main(String[] args) {
         new Login();
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==btn_reg) {
@@ -101,20 +112,19 @@ public class Login implements ActionListener{
             new Registration();
         }
         else if (e.getSource()==btn_login) {
-            String firstname=txt_firstname.getText();
-            String password=txt_password.getText();
-            String query="select * from registration where fname='"+firstname+"' and password='"+password+"'";
+            String username=txt_username.getText();
+            String passw=txt_password.getText();
+            String query="select * from register where username='"+username+"' and password='"+passw+"'";
             Operations db=new Operations();
             ResultSet rs=db.select(query);
             try {
                 if(rs.next()) {
-                    String gender=rs.getString(4);
                     JOptionPane.showMessageDialog(btn_login, "Login successsful");
                     fr.dispose();
-                    new MainPage(firstname);
+
                 }
-                else if(firstname.length()==0 && password.length()==0) {
-                    JOptionPane.showMessageDialog(btn_login, "All filds mast be filled");
+                else if(username.length()==0 && passw.length()==0) {
+                    JOptionPane.showMessageDialog(btn_login, "Please fill both fields.");
                 }
                 else {
                     JOptionPane.showMessageDialog(btn_login, "Your username and password do not match.");
@@ -124,5 +134,6 @@ public class Login implements ActionListener{
                 e1.printStackTrace();
             }
         }
+
     }
 }
