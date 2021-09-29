@@ -50,6 +50,20 @@ void insert_Test() {
         int rs = db.Update(query);
         assertEquals(1, rs);
     }
-
-
+    @Test
+    void Test_reg() {
+        String password="1";
+        String confirmpass="1";
+        Registration reg=new Registration();
+        boolean result=reg.reg_test(password,confirmpass);
+        assertEquals(true,result);
+    }
+    @Test
+    void Test_login1(){
+        String username="alok";
+        String password="alok";
+        Login reg=new Login();
+        boolean result=reg.log_test(username,password);
+        assertEquals(true,result);
+    }
 }

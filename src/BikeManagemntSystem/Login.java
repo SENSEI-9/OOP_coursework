@@ -38,59 +38,59 @@ public class Login implements ActionListener {
 
         lbl_heading=new JLabel("LOGIN HERE");
         lbl_heading.setFont(fon1);
-        lbl_heading.setBounds(500,150,350,50);
-        lbl_heading.setForeground(new Color(7,95,108));
+        lbl_heading.setBounds(550,150,350,50);
+        lbl_heading.setForeground(new Color(255,255,255));
         panel.add(lbl_heading);
 
         lbl_username=new JLabel("User name :");
-        lbl_username.setForeground(new Color(3,57,46));
+        lbl_username.setForeground(new Color(255,255,255));
         lbl_username.setFont(fon2);
-        lbl_username.setBounds(450,195,150,40);
+        lbl_username.setBounds(500,195,150,40);
         panel.add(lbl_username);
 
         txt_username=new JTextField();
         txt_username.setFont(fon2);
         txt_username.setBackground(new Color(220,239,238));
-        txt_username.setBounds(570,198,230,40);
+        txt_username.setBounds(620,198,230,40);
         panel.add(txt_username);
 
         lbl_password=new JLabel("Password  :");
-        lbl_password.setForeground(new Color(3,57,46));
+        lbl_password.setForeground(new Color(255,255,255));
         lbl_password.setFont(fon2);
-        lbl_password.setBounds(450,240,150,40);
+        lbl_password.setBounds(500,240,150,40);
         panel.add(lbl_password);
 
         txt_password=new JPasswordField();
         txt_password.setFont(fon2);
         txt_password.setBackground(new Color(220,239,238));
-        txt_password.setBounds(570,243,230,40);
+        txt_password.setBounds(620,243,230,40);
         txt_password.setBackground(new Color(220,239,238));
         panel.add(txt_password);
 
         btn_login=new JButton("LOGIN");
         btn_login.setFont(fon3);
-        btn_login.setBackground(new Color(11,135,15));
-        btn_login.setBorder(new LineBorder(Color.green,4));
-        btn_login.setForeground(new Color(236,224,249));
-        btn_login.setBounds(580,290,150,50);
+        btn_login.setBackground(new Color(0,0,153));
+        btn_login.setBorder(new LineBorder(Color.blue,4));
+        btn_login.setForeground(new Color(153,153,255));
+        btn_login.setBounds(630,290,150,50);
         btn_login.addActionListener(this);
         panel.add(btn_login);
 
         btn_reg=new JButton("Sign up");
         btn_reg.setForeground(Color.white);
-        btn_reg.setBackground(new Color(253,48,48));
-        btn_reg.setBorder(new LineBorder(new Color(243,143,177),4));
+        btn_reg.setBackground(new Color(0,204,204));
+        btn_reg.setBorder(new LineBorder(new Color(102,255,255),4));
         btn_reg.setFont(fon2);
-        btn_reg.setBounds(680,350,150,40);
+        btn_reg.setBounds(700,350,150,40);
         btn_reg.addActionListener(this);
         panel.add(btn_reg);
 
 
 
         lbl_password=new JLabel("Register now:");
-        lbl_password.setForeground(new Color(3,57,46));
+        lbl_password.setForeground(new Color(255,255,255));
         lbl_password.setFont(fon2);
-        lbl_password.setBounds(450,350,450,40);
+        lbl_password.setBounds(500,350,450,40);
         panel.add(lbl_password);
 
         image_bg=new ImageIcon(getClass().getResource("login.png"));
@@ -101,6 +101,15 @@ public class Login implements ActionListener {
         fr.setExtendedState(JFrame.MAXIMIZED_BOTH);
         fr.setLayout(null);
         fr.setVisible(true);
+    }
+    public boolean log_test(String username, String pass) {
+        String username_test = "alok";
+        String pass_test = "alok";
+        boolean result = false;
+        if (username == username_test && pass == pass_test) {
+            result = true;
+        }
+        return result;
     }
     public static void main(String[] args) {
         new Login();
@@ -137,4 +146,6 @@ public class Login implements ActionListener {
         }
 
     }
+
+
 }

@@ -104,25 +104,25 @@ public class Registration implements ActionListener {
         rmale=new JRadioButton("Male");
         rmale.setBounds(480,150,80,30);
         rmale.setFont(fon2);
-        rmale.setBackground(new Color(253,253,132));
+        rmale.setBackground(new Color(224,224,224));
         rfemale=new JRadioButton("Female");
         rfemale.setBounds(570,150,100,30);
         rfemale.setFont(fon2);
-        rfemale.setBackground(new Color(253,253,132));
+        rfemale.setBackground(new Color(224,224,224));
         ButtonGroup bg=new ButtonGroup();
         bg.add(rmale);
         bg.add(rfemale);
         panel1.add(rmale);
         panel1.add(rfemale);
 
-        lbl_pass=new JLabel("Password               :");
+        lbl_pass=new JLabel("Password           :");
         lbl_pass.setFont(fon2);
         lbl_pass.setBounds(20,190,300,50);
         panel1.add(lbl_pass);
 
         txt_pass=new JPasswordField();
         txt_pass.setFont(fon2);
-        txt_pass.setBounds(130,190,170,35);
+        txt_pass.setBounds(130,195,170,35);
         txt_pass.setBackground(new Color(245,254,255));
         panel1.add(txt_pass);
 
@@ -140,22 +140,22 @@ public class Registration implements ActionListener {
 
         aggree = new JCheckBox("I agree all the terms and conditions.");
         aggree.setFont(fon2);
-        aggree.setBackground(new Color(253,253,132));
-        aggree.setBounds(170,300,370,30);
+        aggree.setBackground(new Color(224,224,224));
+        aggree.setBounds(170,280,370,30);
         panel1.add(aggree);
 
         btn_register=new JButton("Register");
         btn_register.setFont(fon3);
-        btn_register.setForeground(new Color(5,188,5));
+        btn_register.setForeground(new Color(0,0,153));
         btn_register.setBounds(250,335,200,45);
-        btn_register.setBackground(new Color(207,241,245));
+        btn_register.setBackground(new Color(153,153,255));
         btn_register.addActionListener(this);
         panel1.add(btn_register);
 
         btn_back=new JButton("Go Back");
         btn_back.setForeground(Color.white);
-        btn_back.setBackground(new Color(255,0,0));
-        btn_back.setBorder(new LineBorder(new Color(243,143,177),7));
+        btn_back.setBackground(new Color(0,204,204));
+        btn_back.setBorder(new LineBorder(new Color(102,255,255),6));
         btn_back.setFont(fon2);
         btn_back.setBounds(500,335,100,40);
         btn_back.addActionListener(this);
@@ -170,6 +170,18 @@ public class Registration implements ActionListener {
         fr.setVisible(true);
         fr.setBackground(Color.YELLOW);
     }
+
+    public boolean reg_test(String pass_t, String cpass_t) {
+        String pass_test="1";
+        String cpass_test="1";
+        boolean result = false;
+        if (pass_t == pass_test && cpass_t == cpass_test) {
+            result = true;
+
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         new Registration();
     }

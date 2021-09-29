@@ -14,14 +14,14 @@ import javax.swing.table.JTableHeader;
 public class MainPage implements ActionListener {
     JFrame fr;
     JLabel lbl_heading, lbl_bike1, lbl_bike2, lbl_bike3, lbl_bike4, lbl_bike5,lbl_bike6,lbl_bike7,lbl_bike8,
-            lbl_topic, lbl_username, lbl_fullname, lbl_contact, lbl_gender, lbl_password, lbl_confirm, lbl_img;
+            lbl_topic, lbl_username, lbl_fullname, lbl_contact, lbl_gender, lbl_password, lbl_confirm, lbl_img,lbl_img1;
     Font fon1, fon2, fon3;
     JPanel panel, bike, details, profile;
     JButton btn_bike, btn_details, btn_profile, btn_book, btn_delete;
     ImageIcon image;
     String username;
     JCheckBox cb1, cb2, cb3, cb4, cb5,cb6,cb7,cb8;
-    ImageIcon bike1, bike2, bike3, bike4, bike5,bike6,bike7,bike8;
+    ImageIcon bike1, bike2, bike3, bike4, bike5,bike6,bike7,bike8,image_bg;
     String bike_name;
     ButtonGroup bg;
     JTable jt;
@@ -211,6 +211,10 @@ public class MainPage implements ActionListener {
         btn_book.addActionListener(this);
         bike.add(btn_book);
 
+        image_bg=new ImageIcon(getClass().getResource("main.png"));
+        lbl_img1=new JLabel(image_bg);
+        lbl_img1.setBounds(0,0,1370,700);
+        panel.add(lbl_img1);
 
         fr.setExtendedState(JFrame.MAXIMIZED_BOTH);
         fr.setVisible(true);
@@ -227,6 +231,7 @@ public class MainPage implements ActionListener {
         lbl_topic = new JLabel("ID of purchase to cancel:");
         lbl_topic.setBounds(10, 10, 300, 30);
         lbl_topic.setFont(fon3);
+        lbl_topic.setForeground(new Color(34,34,247));
         details.add(lbl_topic);
 
         txt_id = new JTextField();
@@ -403,8 +408,8 @@ public class MainPage implements ActionListener {
             } else {
                 try {
                     String query = "update registration set username='" + txt_username.getText() + "',"
-                            + "name='" + txt_fullname.getText() + "',gender='" + gender + "',contact='" + txt_contact.getText() + "'"
-                            + ",confirm='" + txt_confirm.getText() + "',password='" + txt_password.getText() + "' where username='" + username + "'";
+                            + "name='" + txt_fullname.getText() + "',gender='" + gender + "',contact='" + txt_contact.getText() + "',"
+                            + "confirmpass='" + txt_confirm.getText() + "',password='" + txt_password.getText() + "' where username='" + username + "'";
                     Operations db = new Operations();
                     int rs = db.Update(query);
                     JOptionPane.showMessageDialog(btn_update, "Update successsful");
