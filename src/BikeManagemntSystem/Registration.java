@@ -85,14 +85,16 @@ public class Registration implements ActionListener {
 
         lbl_contact=new JLabel("Contact       :");
         lbl_contact.setFont(fon2);
-        lbl_contact.setBounds(20,190,300,50);
+        lbl_contact.setBounds(20,140,300,50);
         panel1.add(lbl_contact);
 
         txt_contact=new JTextField();
         txt_contact.setFont(fon2);
-        txt_contact.setBounds(130,200,170,35);
+        txt_contact.setBounds(130,140,170,35);
         txt_contact.setBackground(new Color(245,254,255));
         panel1.add(txt_contact);
+
+
 
         lbl_gender =new JLabel("Gender                   :");
         lbl_gender.setFont(fon2);
@@ -113,26 +115,26 @@ public class Registration implements ActionListener {
         panel1.add(rmale);
         panel1.add(rfemale);
 
-
         lbl_pass=new JLabel("Password               :");
         lbl_pass.setFont(fon2);
-        lbl_pass.setBounds(310,200,300,50);
+        lbl_pass.setBounds(20,190,300,50);
         panel1.add(lbl_pass);
 
         txt_pass=new JPasswordField();
         txt_pass.setFont(fon2);
-        txt_pass.setBounds(480,205,170,35);
+        txt_pass.setBounds(130,190,170,35);
         txt_pass.setBackground(new Color(245,254,255));
         panel1.add(txt_pass);
 
+
         lbl_cpss=new JLabel("Confirm Password:");
         lbl_cpss.setFont(fon2);
-        lbl_cpss.setBounds(20,250,170,35);
+        lbl_cpss.setBounds(310,200,170,35);
         panel1.add(lbl_cpss);
 
         txt_cpss=new JPasswordField();
         txt_cpss.setFont(fon2);
-        txt_cpss.setBounds(130,250,170,35);
+        txt_cpss.setBounds(480,205,170,35);
         txt_cpss.setBackground(new Color(245,254,255));
         panel1.add(txt_cpss);
 
