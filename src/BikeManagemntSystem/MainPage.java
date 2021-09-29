@@ -14,12 +14,12 @@ import javax.swing.table.JTableHeader;
 public class MainPage implements ActionListener {
     JFrame fr;
     JLabel lbl_heading, lbl_bike1, lbl_bike2, lbl_bike3, lbl_bike4, lbl_bike5,lbl_bike6,lbl_bike7,lbl_bike8,
-            lbl_topic, lbl_firstname, lbl_lastname, lbl_contact, lbl_gender, lbl_password, lbl_confirm, lbl_img;
+            lbl_topic, lbl_username, lbl_fullname, lbl_contact, lbl_gender, lbl_password, lbl_confirm, lbl_img;
     Font fon1, fon2, fon3;
     JPanel panel, bike, details, profile;
     JButton btn_bike, btn_details, btn_profile, btn_book, btn_delete;
     ImageIcon image;
-    String firstname;
+    String username;
     JCheckBox cb1, cb2, cb3, cb4, cb5,cb6,cb7,cb8;
     ImageIcon bike1, bike2, bike3, bike4, bike5,bike6,bike7,bike8;
     String bike_name;
@@ -27,13 +27,13 @@ public class MainPage implements ActionListener {
     JTable jt;
     DefaultTableModel model;
     JScrollPane pg;
-    JTextField txt_firstname, txt_lastname, txt_contact, txt_id;
+    JTextField txt_username, txt_fullname, txt_contact, txt_id;
     JPasswordField txt_password, txt_confirm;
     JButton btn_update;
     JRadioButton rmale, rfemale;
 
-    public MainPage(String firstname) {
-        this.firstname = firstname;
+    public MainPage(String username) {
+        this.username = username;
         fr = new JFrame("HOME Page");
         fon1 = new Font("Algerian", Font.BOLD, 60);
         fon2 = new Font("arial", Font.BOLD, 35);
@@ -250,7 +250,7 @@ public class MainPage implements ActionListener {
         jt.getTableHeader().setPreferredSize(new Dimension(80, 50));
         try {
             Operations db = new Operations();
-            String query = "select * from bike where username='" + firstname + "'";
+            String query = "select * from bike where username='" + username + "'";
             ResultSet rs = db.select(query);
 
 
@@ -275,17 +275,17 @@ public class MainPage implements ActionListener {
         profile.add(lbl_topic);
 
 
-        lbl_firstname = new JLabel("first name:");
-        lbl_firstname.setFont(fon3);
-        lbl_firstname.setForeground(Color.white);
-        lbl_firstname.setBounds(20, 80, 300, 50);
-        profile.add(lbl_firstname);
+        lbl_username = new JLabel("User name:");
+        lbl_username.setFont(fon3);
+        lbl_username.setForeground(Color.white);
+        lbl_username.setBounds(20, 80, 300, 50);
+        profile.add(lbl_username);
 
-        lbl_lastname = new JLabel("Last name              :");
-        lbl_lastname.setFont(fon3);
-        lbl_lastname.setForeground(Color.white);
-        lbl_lastname.setBounds(310, 80, 300, 50);
-        profile.add(lbl_lastname);
+        lbl_fullname = new JLabel("Full name          :");
+        lbl_fullname.setFont(fon3);
+        lbl_fullname.setForeground(Color.white);
+        lbl_fullname.setBounds(310, 80, 300, 50);
+        profile.add(lbl_fullname);
 
         lbl_contact = new JLabel("Contact      :");
         lbl_contact.setFont(fon3);
@@ -328,21 +328,21 @@ public class MainPage implements ActionListener {
         profile.add(lbl_confirm);
 
         Operations db = new Operations();
-        String query = "select * from registration where fname='" + firstname + "'";
+        String query = "select * from registration where username='" + username + "'";
         ResultSet rs = db.select(query);
         try {
             while (rs.next()) {
-                txt_firstname = new JTextField(rs.getString("fname"));
-                txt_firstname.setFont(fon3);
-                txt_firstname.setBackground(new Color(245, 254, 255));
-                txt_firstname.setBounds(130, 85, 170, 35);
-                profile.add(txt_firstname);
+                txt_username = new JTextField(rs.getString("username"));
+                txt_username.setFont(fon3);
+                txt_username.setBackground(new Color(245, 254, 255));
+                txt_username.setBounds(130, 85, 170, 35);
+                profile.add(txt_username);
 
-                txt_lastname = new JTextField(rs.getString("lname"));
-                txt_lastname.setFont(fon3);
-                txt_lastname.setBounds(480, 85, 170, 35);
-                txt_lastname.setBackground(new Color(245, 254, 255));
-                profile.add(txt_lastname);
+                txt_fullname = new JTextField(rs.getString("name"));
+                txt_fullname.setFont(fon3);
+                txt_fullname.setBounds(480, 85, 170, 35);
+                txt_fullname.setBackground(new Color(245, 254, 255));
+                profile.add(txt_fullname);
 
 
                 String gender = rs.getString("gender");
@@ -369,7 +369,7 @@ public class MainPage implements ActionListener {
                 txt_password.setBackground(new Color(245, 254, 255));
                 profile.add(txt_password);
 
-                txt_confirm = new JPasswordField(rs.getString("confirm"));
+                txt_confirm = new JPasswordField(rs.getString("confirmpass"));
                 txt_confirm.setFont(fon3);
                 txt_confirm.setBounds(350, 255, 170, 35);
                 txt_confirm.setBackground(new Color(245, 254, 255));
@@ -402,9 +402,9 @@ public class MainPage implements ActionListener {
                 gender = rfemale.getText();
             } else {
                 try {
-                    String query = "update registration set fname='" + txt_firstname.getText() + "',"
-                            + "lname='" + txt_lastname.getText() + "',gender='" + gender + "',contact='" + txt_contact.getText() + "'"
-                            + ",confirm='" + txt_confirm.getText() + "',password='" + txt_password.getText() + "' where fname='" + firstname + "'";
+                    String query = "update registration set username='" + txt_username.getText() + "',"
+                            + "name='" + txt_fullname.getText() + "',gender='" + gender + "',contact='" + txt_contact.getText() + "'"
+                            + ",confirm='" + txt_confirm.getText() + "',password='" + txt_password.getText() + "' where username='" + username + "'";
                     Operations db = new Operations();
                     int rs = db.Update(query);
                     JOptionPane.showMessageDialog(btn_update, "Update successsful");
@@ -479,7 +479,7 @@ public class MainPage implements ActionListener {
                 }
                 Operations db = new Operations();
                 String query = "insert into bike(username,bikename)"
-                        + " values('" + firstname + "','" + bike_name + "')";
+                        + " values('" + username + "','" + bike_name + "')";
                 int ans = db.insert(query);
                 if (ans > 0) {
                     JOptionPane.showMessageDialog(fr, "Bike booked successfully");

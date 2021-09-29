@@ -114,7 +114,7 @@ public class Login implements ActionListener {
         else if (e.getSource()==btn_login) {
             String username=txt_username.getText();
             String passw=txt_password.getText();
-            String query="select * from register where username='"+username+"' and password='"+passw+"'";
+            String query="select * from registration where username='"+username+"' and password='"+passw+"'";
             Operations db=new Operations();
             ResultSet rs=db.select(query);
             try {
