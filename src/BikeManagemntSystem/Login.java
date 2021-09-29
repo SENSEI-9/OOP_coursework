@@ -121,6 +121,7 @@ public class Login implements ActionListener {
                 if(rs.next()) {
                     JOptionPane.showMessageDialog(btn_login, "Login successsful");
                     fr.dispose();
+                    new MainPage(username);
 
                 }
                 else if(username.length()==0 && passw.length()==0) {
