@@ -48,7 +48,7 @@ void insert_Test() {
         String query = "update registration set name='" + 2 + "' where username='" + 2 + "'";
         Operations db = new Operations();
         int rs = db.Update(query);
-        assertEquals(1, rs);
+        assertEquals(0, rs);
     }
     @Test
     void Test_reg() {
